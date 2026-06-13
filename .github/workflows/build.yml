@@ -22,6 +22,8 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.7' # Hata veren 9.5.1 yerine stabil 8.7 sürümünü zorluyoruz
 
       - name: Build Debug APK
         run: gradle assembleDebug --no-daemon
