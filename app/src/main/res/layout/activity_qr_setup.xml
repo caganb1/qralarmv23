@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_qr"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background"
+            app:titleTextColor="@color/text_primary"
+            app:navigationIconTint="@color/text_primary"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/qr_setup_instructions"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_current_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_qr_configured_setup"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Scan Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_scan_to_set"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/scan_to_set"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_qr_code"
+                app:backgroundTint="@color/accent"
+                app:cornerRadius="24dp"
+                android:textColor="@color/white"
+                app:iconTint="@color/white"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Manual code entry -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:boxBackgroundColor="@color/surface"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxStrokeWidth="0dp"
+                app:hintTextColor="@color/text_secondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_qr_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/qr_code_hint"
+                    android:textColor="@color/text_primary"
+                    android:padding="16dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:boxBackgroundColor="@color/surface"
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusBottomEnd="24dp"
+                app:boxStrokeWidth="0dp"
+                app:hintTextColor="@color/text_secondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_qr_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/qr_label_hint"
+                    android:textColor="@color/text_primary"
+                    android:padding="16dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_clear_qr"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/clear"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    app:strokeColor="@color/danger"
+                    android:textColor="@color/danger"
+                    app:cornerRadius="24dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_save_qr"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="2"
+                    android:text="@string/save"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primary"
+                    app:cornerRadius="24dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
